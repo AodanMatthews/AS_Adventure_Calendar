@@ -4,6 +4,7 @@ label: Orders Reporting
 metrics:
   - unique_name: salesamount_sum
   - unique_name: orderquantity_sum
+  - unique_name: salesordernumber_non-null
 relationships:
   - unique_name: factinternetsales_salesordernumber_to_Order Dimension_Sale Order Line No
     from:
