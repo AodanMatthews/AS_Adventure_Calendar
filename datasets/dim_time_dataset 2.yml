@@ -3,7 +3,7 @@ object_type: dataset
 label: dim_time_dataset 2
 columns:
   - name: datekey
-    data_type: decimal(38,9)
+    data_type: long
   - name: date_name
     data_type: string
   - name: year_name

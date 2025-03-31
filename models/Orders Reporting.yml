@@ -38,8 +38,6 @@ relationships:
     to:
       dimension: Date Dimension
       level: W Date Key Join
-
-
   - unique_name: factinternetsales_salesordernumber_to_Order Dimension_Sale Order Line No
     from:
       dataset: factinternetsales
@@ -58,3 +56,11 @@ relationships:
     to:
       dimension: Order Dimension
       level: Sales Reason Join
+  - unique_name: factinternetsales_orderdatekey_to_Calendar Date Dimension_Date Key Join
+    from:
+      dataset: factinternetsales
+      join_columns:
+        - orderdatekey
+    to:
+      dimension: Calendar Date Dimension
+      level: Date Key Join
