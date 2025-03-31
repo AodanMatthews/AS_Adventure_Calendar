@@ -1,0 +1,13 @@
+unique_name: Test
+object_type: model
+label: Test
+dimensions: []
+metrics: []
+relationships:
+  - unique_name: forecast_daily_calendar_metric_empty_dimension
+    from:
+      dataset: forecast_daily_calendar_metric
+      join_columns: []
+    to:
+      dimension: ''
+      level: ''

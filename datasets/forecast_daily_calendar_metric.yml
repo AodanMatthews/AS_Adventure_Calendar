@@ -1,0 +1,182 @@
+unique_name: forecast_daily_calendar_metric
+object_type: dataset
+label: forecast_daily_calendar_metric
+columns:
+  - name: city_name
+    data_type: string
+  - name: country_code
+    data_type: string
+  - name: latitude
+    data_type: double
+  - name: longitude
+    data_type: double
+  - name: date
+    data_type: date
+  - name: cloud_cover_perc_avg
+    data_type: int
+  - name: cloud_cover_perc_max
+    data_type: int
+  - name: cloud_cover_perc_min
+    data_type: int
+  - name: degree_days_cooling
+    data_type: double
+  - name: degree_days_freezing
+    data_type: double
+  - name: degree_days_growing
+    data_type: double
+  - name: degree_days_heating
+    data_type: double
+  - name: humidity_relative_avg
+    data_type: double
+  - name: humidity_relative_max
+    data_type: double
+  - name: humidity_relative_min
+    data_type: double
+  - name: index_air_quality_24hr_max
+    data_type: double
+  - name: index_uv_avg
+    data_type: double
+  - name: index_uv_max
+    data_type: double
+  - name: index_uv_min
+    data_type: double
+  - name: minutes_of_ice_total
+    data_type: int
+  - name: minutes_of_precipitation_total
+    data_type: int
+  - name: minutes_of_sun_total
+    data_type: int
+  - name: minutes_of_rain_total
+    data_type: int
+  - name: minutes_of_snow_total
+    data_type: int
+  - name: has_ice
+    data_type: boolean
+  - name: ice_lwe_rate_avg
+    data_type: double
+  - name: ice_lwe_rate_max
+    data_type: double
+  - name: ice_lwe_rate_min
+    data_type: double
+  - name: ice_lwe_total
+    data_type: double
+  - name: ice_probability
+    data_type: int
+  - name: has_precipitation
+    data_type: boolean
+  - name: precipitation_lwe_rate_avg
+    data_type: double
+  - name: precipitation_lwe_rate_max
+    data_type: double
+  - name: precipitation_lwe_rate_min
+    data_type: double
+  - name: precipitation_lwe_total
+    data_type: double
+  - name: precipitation_probability
+    data_type: int
+  - name: precipitation_type_desc_predominant
+    data_type: string
+  - name: has_rain
+    data_type: boolean
+  - name: rain_lwe_rate_avg
+    data_type: double
+  - name: rain_lwe_rate_max
+    data_type: double
+  - name: rain_lwe_rate_min
+    data_type: double
+  - name: rain_lwe_total
+    data_type: double
+  - name: rain_probability
+    data_type: int
+  - name: snow_liquid_ratio_accuweather_avg
+    data_type: double
+  - name: snow_liquid_ratio_accuweather_max
+    data_type: double
+  - name: snow_liquid_ratio_accuweather_min
+    data_type: double
+  - name: has_snow
+    data_type: boolean
+  - name: snow_avg
+    data_type: double
+  - name: snow_max
+    data_type: double
+  - name: snow_min
+    data_type: double
+  - name: snow_total
+    data_type: double
+  - name: snow_lwe_rate_avg
+    data_type: double
+  - name: snow_lwe_rate_max
+    data_type: double
+  - name: snow_lwe_rate_min
+    data_type: double
+  - name: snow_lwe_total
+    data_type: double
+  - name: snow_probability
+    data_type: int
+  - name: solar_irradiance_avg
+    data_type: double
+  - name: solar_irradiance_max
+    data_type: double
+  - name: solar_irradiance_total
+    data_type: double
+  - name: temperature_avg
+    data_type: double
+  - name: temperature_max
+    data_type: double
+  - name: temperature_min
+    data_type: double
+  - name: temperature_dew_point_avg
+    data_type: double
+  - name: temperature_dew_point_max
+    data_type: double
+  - name: temperature_dew_point_min
+    data_type: double
+  - name: temperature_heat_index_avg
+    data_type: double
+  - name: temperature_heat_index_max
+    data_type: double
+  - name: temperature_heat_index_min
+    data_type: double
+  - name: temperature_realfeel_avg
+    data_type: double
+  - name: temperature_realfeel_max
+    data_type: double
+  - name: temperature_realfeel_min
+    data_type: double
+  - name: temperature_realfeel_shade_avg
+    data_type: double
+  - name: temperature_realfeel_shade_max
+    data_type: double
+  - name: temperature_realfeel_shade_min
+    data_type: double
+  - name: temperature_wind_chill_avg
+    data_type: double
+  - name: temperature_wind_chill_max
+    data_type: double
+  - name: temperature_wind_chill_min
+    data_type: double
+  - name: visibility_avg
+    data_type: string
+  - name: visibility_max
+    data_type: string
+  - name: visibility_min
+    data_type: double
+  - name: wind_direction_avg
+    data_type: double
+  - name: wind_gust_avg
+    data_type: double
+  - name: wind_gust_max
+    data_type: double
+  - name: wind_gust_min
+    data_type: double
+  - name: wind_gust_direction_avg
+    data_type: double
+  - name: wind_speed_avg
+    data_type: double
+  - name: wind_speed_max
+    data_type: double
+  - name: wind_speed_min
+    data_type: double
+connection_id: con_samples_accuweather
+table: forecast_daily_calendar_metric
