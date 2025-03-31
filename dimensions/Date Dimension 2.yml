@@ -9,15 +9,17 @@ hierarchies:
     folder: Date Attributes
     levels:
       - unique_name: Year
+        secondary_attributes:
+          - unique_name: c_year_name
+            label: Year Name
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - year_start
+            name_column: c_year_name
       - unique_name: Month
         secondary_attributes:
-          - unique_name: c_month_start
-            label: Month Start
-            dataset: dim_time_dataset 2
-            folder: Date Attributes
-            key_columns:
-              - month_start
-            name_column: month_start
           - unique_name: c_month_of_year
             label: Month of Year
             contains_unique_names: false
@@ -28,14 +30,6 @@ hierarchies:
             name_column: c_month_of_year
       - unique_name: Week
         secondary_attributes:
-          - unique_name: c_week_start
-            label: Week Start
-            contains_unique_names: false
-            dataset: dim_time_dataset 2
-            is_unique_key: false
-            key_columns:
-              - week_start
-            name_column: week_start
           - unique_name: c_week_of_year
             label: Week of Year
             contains_unique_names: false
@@ -44,6 +38,14 @@ hierarchies:
             key_columns:
               - week_start
             name_column: c_week_of_year
+          - unique_name: c_week_name
+            label: Week Name
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - week_start
+            name_column: c_week_name
       - unique_name: Day
         secondary_attributes:
           - unique_name: c_day_of_week_number
