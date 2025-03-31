@@ -1,0 +1,129 @@
+unique_name: Date Dimension 2
+object_type: dimension
+label: Date Dimension 2
+hierarchies:
+  - unique_name: Calendar Date Hierarchy
+    label: Calendar Date Hierarchy
+    description: A Gregorian Date Hierarchy.  Organizes time by Year, Month, Week, Day
+    filter_empty: 'yes'
+    folder: Date Attributes
+    levels:
+      - unique_name: Year
+      - unique_name: Month
+        secondary_attributes:
+          - unique_name: c_month_start
+            label: Month Start
+            dataset: dim_time_dataset 2
+            folder: Date Attributes
+            key_columns:
+              - month_start
+            name_column: month_start
+          - unique_name: c_month_of_year
+            label: Month of Year
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - month_start
+            name_column: c_month_of_year
+      - unique_name: Week
+        secondary_attributes:
+          - unique_name: c_week_start
+            label: Week Start
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - week_start
+            name_column: week_start
+          - unique_name: c_week_of_year
+            label: Week of Year
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - week_start
+            name_column: c_week_of_year
+      - unique_name: Day
+        secondary_attributes:
+          - unique_name: c_day_of_week_number
+            label: Day Of Week Number
+            dataset: dim_time_dataset 2
+            folder: Date Attributes
+            key_columns:
+              - c_day_of_week
+            name_column: c_day_of_week
+          - unique_name: c_day_name
+            label: Day Name
+            dataset: dim_time_dataset 2
+            folder: Date Attributes
+            key_columns:
+              - date_name
+            name_column: date_name
+          - unique_name: Day_Date
+            label: Day Date
+            dataset: dim_time_dataset 2
+            folder: Date Attributes
+            key_columns:
+              - date
+            name_column: date
+          - unique_name: c_day_of_year
+            label: Day of Year
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - c_day_of_year
+            name_column: c_day_of_year
+      - unique_name: Date Key Join
+level_attributes:
+  - unique_name: Month
+    label: Month
+    dataset: dim_time_dataset 2
+    key_columns:
+      - month_start
+    name_column: month_name
+    sort_column: month
+    time_unit: month
+  - unique_name: Day
+    label: Day
+    allowed_calcs_for_dma:
+      - ParallelPeriod
+      - Ancestor
+      - Descendants
+      - Siblings
+      - PeriodsToDate
+    dataset: dim_time_dataset 2
+    is_unique_key: true
+    key_columns:
+      - date
+    name_column: date
+    sort_column: date
+    time_unit: day
+  - unique_name: Year
+    label: Year
+    dataset: dim_time_dataset 2
+    key_columns:
+      - year_start
+    name_column: year_name
+    sort_column: year
+    time_unit: year
+  - unique_name: Week
+    label: Week
+    dataset: dim_time_dataset 2
+    key_columns:
+      - week_start
+    name_column: c_week_name
+    sort_column: week
+    time_unit: week
+  - unique_name: Date Key Join
+    label: Date Key Join
+    dataset: dim_time_dataset 2
+    is_hidden: true
+    key_columns:
+      - datekey
+    name_column: datekey
+    sort_column: datekey
+    time_unit: day
+relationships: []
+type: time
