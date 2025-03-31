@@ -1,6 +1,0 @@
-unique_name: con_samples_accuweather
-object_type: connection
-label: con_samples_accuweather
-as_connection: Databricks
-database: samples
-schema: accuweather
