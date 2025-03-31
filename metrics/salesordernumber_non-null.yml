@@ -1,0 +1,6 @@
+unique_name: salesordernumber_non-null
+object_type: metric
+label: Total Sales Orders
+calculation_method: count distinct
+column: salesordernumber
+dataset: factinternetsales
