@@ -56,11 +56,19 @@ relationships:
     to:
       dimension: Order Dimension
       level: Sales Reason Join
-  - unique_name: factinternetsales_orderdatekey_to_Calendar Date Dimension_Date Key Join
+  - unique_name: factinternetsales_orderdatekey_to_Calendar Date Dimension_c_Date Key Join
     from:
       dataset: factinternetsales
       join_columns:
         - orderdatekey
     to:
       dimension: Calendar Date Dimension
-      level: Date Key Join
+      level: c_Date Key Join
+  - unique_name: factinternetsales_shipdatekey_to_Calendar Date Dimension_c_Date Key Join
+    from:
+      dataset: factinternetsales
+      join_columns:
+        - shipdatekey
+    to:
+      dimension: Calendar Date Dimension
+      level: c_Date Key Join

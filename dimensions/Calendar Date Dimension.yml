@@ -6,9 +6,8 @@ hierarchies:
     label: Calendar Date Hierarchy
     description: A Gregorian Date Hierarchy.  Organizes time by Year, Month, Week, Day
     filter_empty: 'yes'
-    folder: Date Attributes
     levels:
-      - unique_name: Year
+      - unique_name: c_Year
         secondary_attributes:
           - unique_name: c_year_name
             label: Year Name
@@ -18,7 +17,7 @@ hierarchies:
             key_columns:
               - year_start
             name_column: c_year_name
-      - unique_name: Month
+      - unique_name: c_Month
         secondary_attributes:
           - unique_name: c_month_of_year
             label: Month of Year
@@ -28,7 +27,16 @@ hierarchies:
             key_columns:
               - month_start
             name_column: c_month_of_year
-      - unique_name: Week
+            sort_column: c_month_of_year
+          - unique_name: c_month_name
+            label: Month Name
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - month_start
+            name_column: month
+      - unique_name: c_Week
         secondary_attributes:
           - unique_name: c_week_of_year
             label: Week of Year
@@ -38,6 +46,7 @@ hierarchies:
             key_columns:
               - week_start
             name_column: c_week_of_year
+            sort_column: c_week_of_year
           - unique_name: c_week_name
             label: Week Name
             contains_unique_names: false
@@ -46,26 +55,24 @@ hierarchies:
             key_columns:
               - week_start
             name_column: c_week_name
-      - unique_name: Day
+      - unique_name: c_Day
         secondary_attributes:
           - unique_name: c_day_of_week_number
             label: Day Of Week Number
             dataset: dim_time_dataset 2
-            folder: Date Attributes
             key_columns:
               - c_day_of_week
             name_column: c_day_of_week
           - unique_name: c_day_name
             label: Day Name
             dataset: dim_time_dataset 2
-            folder: Date Attributes
             key_columns:
-              - date_name
-            name_column: date_name
+              - date
+            name_column: day_name
+            sort_column: date
           - unique_name: Day_Date
             label: Day Date
             dataset: dim_time_dataset 2
-            folder: Date Attributes
             key_columns:
               - date
             name_column: date
@@ -77,17 +84,62 @@ hierarchies:
             key_columns:
               - c_day_of_year
             name_column: c_day_of_year
-      - unique_name: Date Key Join
+      - unique_name: c_Date Key Join
+  - unique_name: Fiscal Date Hierarchy
+    label: Fiscal Date Hierarchy
+    levels:
+      - unique_name: f_Year
+        secondary_attributes:
+          - unique_name: f_year_name
+            label: Year Name
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - f_year
+            name_column: f_year_name
+      - unique_name: c_Month
+      - unique_name: f_Week
+        secondary_attributes:
+          - unique_name: f_week_of_year
+            label: Week of Year
+            contains_unique_names: false
+            dataset: dim_time_dataset 2
+            is_unique_key: false
+            key_columns:
+              - week_start
+            name_column: f_week_of_year
+            sort_column: f_week_of_year
+      - unique_name: c_Day
+      - unique_name: c_Date Key Join
 level_attributes:
-  - unique_name: Month
+  - unique_name: c_Year
+    label: Year
+    contains_unique_names: false
+    dataset: dim_time_dataset 2
+    is_unique_key: false
+    key_columns:
+      - year_start
+    name_column: year
+    sort_column: year_start
+    time_unit: year
+  - unique_name: c_Month
     label: Month
     dataset: dim_time_dataset 2
     key_columns:
       - month_start
-    name_column: month_name
-    sort_column: month
+    name_column: month
+    sort_column: month_start
     time_unit: month
-  - unique_name: Day
+  - unique_name: c_Week
+    label: Week
+    dataset: dim_time_dataset 2
+    key_columns:
+      - week_start
+    name_column: week
+    sort_column: week_start
+    time_unit: week
+  - unique_name: c_Day
     label: Day
     allowed_calcs_for_dma:
       - ParallelPeriod
@@ -99,26 +151,10 @@ level_attributes:
     is_unique_key: true
     key_columns:
       - date
-    name_column: date
+    name_column: date_name
     sort_column: date
     time_unit: day
-  - unique_name: Year
-    label: Year
-    dataset: dim_time_dataset 2
-    key_columns:
-      - year_start
-    name_column: year_name
-    sort_column: year
-    time_unit: year
-  - unique_name: Week
-    label: Week
-    dataset: dim_time_dataset 2
-    key_columns:
-      - week_start
-    name_column: c_week_name
-    sort_column: week
-    time_unit: week
-  - unique_name: Date Key Join
+  - unique_name: c_Date Key Join
     label: Date Key Join
     dataset: dim_time_dataset 2
     is_hidden: true
@@ -127,5 +163,23 @@ level_attributes:
     name_column: datekey
     sort_column: datekey
     time_unit: day
-relationships: []
+  - unique_name: f_Year
+    label: Year
+    contains_unique_names: false
+    dataset: dim_time_dataset 2
+    is_unique_key: false
+    key_columns:
+      - f_year
+    name_column: f_year
+    time_unit: year
+  - unique_name: f_Week
+    label: Week
+    contains_unique_names: false
+    dataset: dim_time_dataset 2
+    is_unique_key: false
+    key_columns:
+      - week_start
+    name_column: f_week_name
+    sort_column: week_start
+    time_unit: week
 type: time
