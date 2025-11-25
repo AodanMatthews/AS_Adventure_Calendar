@@ -3,29 +3,29 @@ object_type: dataset
 label: dim_time_dataset
 columns:
   - name: pk_date
-    data_type: datetime
+    data_type: date
   - name: datekey
     data_type: long
   - name: date_name
     data_type: string
   - name: year
-    data_type: datetime
+    data_type: date
   - name: year_name
     data_type: string
   - name: half_year
-    data_type: datetime
+    data_type: date
   - name: half_year_name
     data_type: string
   - name: quarter
-    data_type: datetime
+    data_type: date
   - name: quarter_name
     data_type: string
   - name: month
-    data_type: datetime
+    data_type: date
   - name: month_name
     data_type: string
   - name: week
-    data_type: datetime
+    data_type: date
   - name: week_name
     data_type: string
   - name: day_of_year
@@ -89,7 +89,7 @@ columns:
   - name: reporting_quarter_name
     data_type: string
   - name: reporting_month
-    data_type: datetime
+    data_type: date
   - name: reporting_month_name
     data_type: string
   - name: reporting_month_name2
@@ -99,7 +99,7 @@ columns:
   - name: reporting_week_name
     data_type: string
   - name: reporting_day
-    data_type: datetime
+    data_type: date
   - name: reporting_day_name
     data_type: string
   - name: reporting_day_of_year
@@ -171,7 +171,7 @@ columns:
   - name: iso_8601_week_name
     data_type: string
   - name: iso_8601_day
-    data_type: datetime
+    data_type: date
   - name: iso_8601_day_name
     data_type: string
   - name: iso_8601_day_of_year
@@ -187,18 +187,18 @@ columns:
   - name: iso_8601_week_of_year_name_reporting_day_ctl
     data_type: string
   - name: reporting_day_lykey
-    data_type: datetime
+    data_type: date
   - name: reporting_week_ctl
-    data_type: datetime
+    data_type: date
   - name: reporting_week_lykey
-    data_type: datetime
+    data_type: date
   - name: reporting_month_lykey
-    data_type: datetime
+    data_type: date
   - name: reporting_quarter_lykey
-    data_type: datetime
+    data_type: date
   - name: reporting_half_year_lykey
-    data_type: datetime
+    data_type: date
   - name: reporting_year_lykey
-    data_type: datetime
+    data_type: date
 connection_id: As_Adventure
 table: datecustom
