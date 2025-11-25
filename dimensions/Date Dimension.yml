@@ -215,6 +215,7 @@ level_attributes:
     time_unit: year
   - unique_name: Quarter
     label: Quarter
+    constraint_translation_rank: 1
     dataset: dim_time_dataset
     key_columns:
       - quarter
